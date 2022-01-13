@@ -11,9 +11,6 @@ const StyledFlexDiv = styled.div`
 
   `;
 
-
-
-
 const FlexDiv = (props) => {
     return (
       <>

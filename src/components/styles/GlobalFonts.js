@@ -8,6 +8,7 @@ const FontStyles = createGlobalStyle`
   font-family: 'Apple';
   src: url(${Apple }) format('ttf'),
 }
+
 `;
 
 export default FontStyles;

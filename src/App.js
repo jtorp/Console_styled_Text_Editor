@@ -23,17 +23,16 @@ const theme = {
     primary:"black",
     secondary:"brown"
   },
-  mobile: '768px',
+  media: {
+    mobile:"(max-width:425px)",
+    tablet:"(max-width: 768px) and (min-width:425px) ",
+  },
 
- 
 }
 
 function App() {
 
- 
- 
-
-  let currentDateTime =moment().format("ddd, Do of MMM YYYY, h:mm a"); 
+   let currentDateTime =moment().format("ddd, Do of MMM YYYY, h:mm a"); 
   
    return (
      <ThemeProvider theme={theme}>
@@ -41,16 +40,15 @@ function App() {
        <Global/>
        <Container>
       <FlexDiv justify="flex-start" margin="0.25 rem, 3rem">
-
          <Title> {currentDateTime} </Title>
          </FlexDiv>
          <Textarea/>
 
-<FlexDiv  direction={"column"} margin={".750rem 0.5rem"}>
-     <Button 
-      outlined
-      alignSelf="flex-end"
-      onClick = {()=>{}}> send </Button>
+      <FlexDiv  direction={"column"} margin={".750rem 0.5rem"}>
+        <Button 
+          outlined
+          alignSelf="flex-end"
+          onClick = {()=>{}}> send </Button>
     
       </FlexDiv>
       </Container>

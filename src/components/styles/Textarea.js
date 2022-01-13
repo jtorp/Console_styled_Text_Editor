@@ -15,13 +15,19 @@ const StyledTextarea = styled.textarea`
     resize:none;
     border:none;
     overflow: hidden;
-
-
-
+    
     &:focus{
         outline: 0;
     }
-
+     
+  @media ${props => props.theme.media.mobile}{
+      font-size:1.125rem;
+      letter-spacing: 0;
+  }
+    
+    @media ${props => props.theme.media.tablet}{
+        font-size:1rem;
+ }
     
   `;
 
@@ -33,6 +39,9 @@ const Textarea = ({color, ...props})=> {
         if (e.charCode ===  13) {
             setNewLine([...lines, ' > '])
         }
+    }
+    const onDelete =()=>{
+        
     }
     return (
         <FlexDiv>

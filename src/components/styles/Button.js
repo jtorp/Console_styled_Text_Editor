@@ -17,32 +17,31 @@ const StyledButton = styled.button`
         outline: 0;
     }
     &:hover{
-        color:  ${props => props.theme.colors.secondary};
-        background:${props => props.filled};
-        transition: all .3s ease;
+        transition: all .3s ease-in-out;
+        text-shadow: 0.125rem 0.125rem 0.625rem  ${props=>props.theme.colors.primary};
+        box-shadow: 0 0 1rem 0 ${props=>props.theme.colors.primary} inset, 0 0 1rem 0.125rem ${props=>props.theme.colors.primary};  
+    }
+   
+    @media ${props => props.theme.media.mobile}{
+        font-size: 1.25rem;
+        align-self:  center;
+    }
         
-    };
-    @media (max-width: ${({ theme }) => theme.mobile}) {
-        font-size: 1rem;
-        letter-spacing: -5px;
-      }
+        @media ${props => props.theme.media.tablet}{
+            font-size: 2.0625rem;
+            align-self:  center;
+     }
 
-${props => props.filled && css`background: ${props => props.background || props.theme.btns.primary};
-color:  ${props => props.color || props.theme.colors.primary};
-`}
+        ${props => props.filled && css`background: ${props => props.background || props.theme.btns.primary};
+        color:  ${props => props.color || props.theme.colors.primary};
+        `}
 
-${props => props.outlined && css`
-background:transparent;
-border: 1px solid ${props=>props.color || props.theme.colors.primary};
-color:  ${props => props.color || props.theme.colors.primary};
-`}
-  
+        ${props => props.outlined && css`
+        background:transparent;
+        border: 1px solid ${props=>props.color || props.theme.colors.primary};
+        color:  ${props => props.color || props.theme.colors.primary};
+        `} 
 `
-
-// const ButtonXL = styled(StyledButton)`
-// font-size: 2rem;
-// `;
-
 const Button = (props)=> {
 
     return (
