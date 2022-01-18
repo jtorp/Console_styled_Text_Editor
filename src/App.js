@@ -1,15 +1,12 @@
 import { ThemeProvider} from  'styled-components';
+import { BrowserRouter } from "react-router-dom";
 import React from 'react';
-import moment from 'moment'
-
-import Container from './components/styles/Container';
-import Title  from './components/styles/Title';
 import FlexDiv from './components/styles/FlexDiv'
-import Footer from './components/Footer';
 import Global from './components/styles/Global';
-import Button from './components/styles/Button';
-import Textarea from './components/styles/Textarea';
-import FontStyles from './components/styles/GlobalFonts';
+import GlobalFontStyles from './components/styles/GlobalFonts';
+import Navbar from './components/styles/Navbar';
+import AppRouter from './AppRouter';
+import Container from './components/styles/Container';
 
 const theme = {
   colors:{
@@ -21,38 +18,38 @@ const theme = {
   },
   backgrounds:{
     primary:"black",
-    secondary:"brown"
+    secondary:"#darkgray"
+  },
+  svgs:{
+    primary: "limegreen",
+    secondary:"orange"
   },
   media: {
     mobile:"(max-width:425px)",
     tablet:"(max-width: 768px) and (min-width:425px) ",
   },
-
 }
 
 function App() {
-
-   let currentDateTime =moment().format("ddd, Do of MMM YYYY, h:mm a"); 
-  
+  const navLinks = [
+    {name:"About", to:"/about"}, 
+    {name: "Console", to:"/console"},
+    {name: "Link_3", to:"/*"},
+    {name: "Link_4", to:"/*"},
+  ]
    return (
+     <BrowserRouter> 
      <ThemeProvider theme={theme}>
-       <FontStyles/>
+       <GlobalFontStyles/>
        <Global/>
        <Container>
-      <FlexDiv justify="flex-start" margin="0.25 rem, 3rem">
-         <Title> {currentDateTime} </Title>
+         <FlexDiv margin={"2rem 0"}>
+         <Navbar justify={"flex-end"} navLinks={navLinks}/>
          </FlexDiv>
-         <Textarea/>
-
-      <FlexDiv  direction={"column"} margin={".750rem 0.5rem"}>
-        <Button 
-          outlined
-          alignSelf="flex-end"
-          onClick = {()=>{}}> send </Button>
-    
-      </FlexDiv>
-      </Container>
+         <AppRouter/>
+       </Container>
      </ThemeProvider>
+     </BrowserRouter>
  
   );
 }

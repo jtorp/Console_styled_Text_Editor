@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 
-
-
 const StyledLine = styled.div`
     font-size: 0.8125rem;
     letter-spacing: 0px;
@@ -14,8 +12,6 @@ const StyledLine = styled.div`
     }
 
 `
-
-
 
 const Line = (props)=> {
     return (

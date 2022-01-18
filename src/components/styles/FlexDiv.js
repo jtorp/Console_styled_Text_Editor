@@ -7,7 +7,8 @@ const StyledFlexDiv = styled.div`
     align-items:${props => props.align || 'stretch'};
     justify-content: ${props => props.justify || 'stretch'};
     margin : ${props => props.margin || '0'};
-    overflow: hidden;
+    z-index: 1;
+
 
   `;
 

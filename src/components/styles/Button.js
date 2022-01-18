@@ -23,12 +23,12 @@ const StyledButton = styled.button`
     }
    
     @media ${props => props.theme.media.mobile}{
-        font-size: 1.25rem;
+        font-size: 1.625rem;
         align-self:  center;
     }
         
         @media ${props => props.theme.media.tablet}{
-            font-size: 2.0625rem;
+            font-size: 1.125rem;
             align-self:  center;
      }
 

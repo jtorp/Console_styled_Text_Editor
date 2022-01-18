@@ -40,9 +40,7 @@ const Textarea = ({color, ...props})=> {
             setNewLine([...lines, ' > '])
         }
     }
-    const onDelete =()=>{
-        
-    }
+    
     return (
         <FlexDiv>
             <FlexDiv direction="column" margin="0 5px 0 10px">
