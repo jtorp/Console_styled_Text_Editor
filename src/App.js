@@ -10,14 +10,15 @@ import Container from './components/styles/Container';
 
 const theme = {
   colors:{
-    primary:"limegreen",
-    secondary: "hotpink"
+    primary:"#06F050",
+    secondary: "#f006a6"
   },
   btns:{
-    primary:"limegreen",
+    primary: "#06F050", 
+    secondary: "#f006a6"
   },
   backgrounds:{
-    primary:"black",
+    primary:"#000606",
     secondary:"#darkgray"
   },
   svgs:{
@@ -34,8 +35,6 @@ function App() {
   const navLinks = [
     {name:"About", to:"/about"}, 
     {name: "Console", to:"/console"},
-    {name: "Link_3", to:"/*"},
-    {name: "Link_4", to:"/*"},
   ]
    return (
      <BrowserRouter> 

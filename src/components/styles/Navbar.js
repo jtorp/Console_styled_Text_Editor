@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import React, { useState } from "react";
 import styled, {keyframes} from 'styled-components';
 import FlexDiv from './FlexDiv';
-
+import TYPEIT from "../styles/assets/TYPEIT.png"
 
 const pulsate = keyframes`
 100% {
@@ -63,6 +63,11 @@ const Logo = styled.a`
   text-decoration: none;
   font-weight: 800;
   font-size: 1.7rem;
+
+  img{
+    display:flex;
+    width: 6.825rem;
+  }
 `;
 
 const Hamburger = styled.div`
@@ -92,7 +97,7 @@ svg{
 const StyledNav=styled.nav`
 width: 100%;
 display:flex;
-padding: 0.625rem;
+align-self:center;
 justify-content: ${props => props.justify || 'stretch'};
 
 @media ${props => props.theme.media.mobile}{
@@ -114,7 +119,7 @@ justify-content: ${props => props.justify || 'stretch'};
   overflow: hidden;
   right:0;
   top:4rem;
-  width:60%;
+  width:100%;
   align-items:center;
   background-color:inherit;
   transform:  ${({ isHamActive }) => (isHamActive ? "0": "translateX(100%)")};
@@ -163,7 +168,10 @@ const Navbar = ({  navLinks,...props}) => {
 
   return ( 
         <StyledHeader>
-            <Logo>Logo</Logo>           
+      <Logo href="/">
+        <img src={TYPEIT} alt="logo"/>
+        
+      </Logo>           
              <FlexDiv onClick={handleOpen}>{
             isHamActive 
             ?

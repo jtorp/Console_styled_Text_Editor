@@ -1,8 +1,8 @@
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 
 const StyledTitle = styled.h1`
-    font-size: 2rem;
-    letter-spacing: -10px;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
     font-family: 'Apple';
     padding: 0.5rem;
     font-weight:400;
@@ -14,7 +14,7 @@ const StyledTitle = styled.h1`
       margin-bottom:1rem;
   }
     @media ${props => props.theme.media.tablet}{
-      font-size:2.125rem;
+      font-size:1rem;
       margin-bottom: 1rem;
     }
   `;

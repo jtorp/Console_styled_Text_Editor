@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const StyledLine = styled.div`
     font-size: 0.8125rem;
     letter-spacing: 0px;
-    overflow: hidden;
+    overflow: auto;
     opacity:0.7;
     color: ${props => props.color || props.theme.colors.primary};
 
