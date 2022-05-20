@@ -35,8 +35,6 @@ const StyledTextarea = styled.textarea`
 
 
 const Textarea = ({ color, ...props }) => {
-    const [typedArray, setTypedArray] = useState([]);
-
     let currentDateTime=moment().format("ddd, Do of MMM YYYY, h:mm a"); 
     const [lines, setNewLine] = useState([' > ']);
     const ref = useRef();
