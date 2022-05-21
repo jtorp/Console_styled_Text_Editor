@@ -7,26 +7,26 @@ import TYPEIT from "../styles/assets/TYPEIT.png"
 const pulsate = keyframes`
 100% {
     text-shadow:
-    0 0 4px green,
-    0 0 11px green,
-    0 0 19px green,
-    0 0 40px limegreen,
-    0 0 80px limegreen,
-    0 0 90px limegreen,
-    0 0 100px limegreen,
-    0 0 150px limegreen;
+    0 0 4px #9b9992,
+    0 0 11px #9b9992,
+    0 0 19px #9b9992,
+    0 0 40px #c7c4bb,
+    0 0 80px #c7c4bb,
+    0 0 90px #c7c4bb,
+    0 0 100px #c7c4bb,
+    0 0 150px #c7c4bb;
 } 
 
 0% {
 text-shadow:
-  0 0 4px green,
-  0 0 10px green,
-  0 0 18px green,
-  0 0 38px limegreen,
-  0 0 73px limegreen,
-  0 0 80px limegreen,
-  0 0 94px limegreen,
-  0 0 140px limegreen;
+  0 0 4px #9b9992,
+  0 0 10px #9b9992,
+  0 0 18px #9b9992,
+  0 0 38px #c7c4bb,
+  0 0 73px #c7c4bb,
+  0 0 80px #c7c4bb,
+  0 0 94px #c7c4bb,
+  0 0 140px #c7c4bb;
 }
 `
 
@@ -54,19 +54,21 @@ left: 0;
 display:flex;
 align-items: baseline;
 z-index: 90;
-background-color: ${props =>props.background || props.theme.backgrounds.primary};
+background-color: ${props => props.background || props.theme.backgrounds.secondary};
 `
 
 const Logo = styled.a`
   padding: 0.625rem;
-  color: ${props => props.color || props.theme.colors.secondary};
+  top:3%;
+  margin-left:1rem;
+  color: ${props => props.color || props.theme.colors.black};
   text-decoration: none;
   font-weight: 800;
   font-size: 1.7rem;
 
   img{
     display:flex;
-    width: 6.825rem;
+    width: 4.125rem;
   }
 `;
 
@@ -79,7 +81,7 @@ top:3%;
 right:4%;
 
 svg{
-  stroke: ${props => props.svgs || props.theme.svgs.primary};;
+  stroke: ${props => props.svgs || props.theme.svgs.primary};
   stroke-width:2;
 }
 @media ${props => props.theme.media.tablet}{
@@ -94,7 +96,7 @@ svg{
 }
 `
 
-const StyledNav=styled.nav`
+const StyledNav = styled.nav`
 width: 100%;
 display:flex;
 align-self:center;
@@ -106,12 +108,17 @@ justify-content: ${props => props.justify || 'stretch'};
   overflow: hidden;
   right:0;
   top:4rem;
-  width:100%;
+  width:60%;
   align-items:center;
   background-color:inherit;
   transform:  ${({ isHamActive }) => (isHamActive ? "0": "translateX(100%)")};
-  transition: transform 0.5s cubic-bezier(.16,1,.3,1);
-  transition-delay: 0.15s
+  transition: transform 0.8s cubic-bezier(.16,1,.3,1);
+  -webkit-transition: transform 0.8s cubic-bezier(.16,1,.3,1);
+    -moz-transition: transform 0.8s cubic-bezier(.16,1,.3,1);
+    -o-transition:transform 0.8s cubic-bezier(.16,1,.3,1);
+    -ms-transition:transform 0.8s cubic-bezier(.16,1,.3,1);
+  transition-delay: 0.15s;
+
 }
 @media ${props => props.theme.media.tablet}{
   flex-direction: column;
@@ -119,38 +126,54 @@ justify-content: ${props => props.justify || 'stretch'};
   overflow: hidden;
   right:0;
   top:4rem;
-  width:100%;
+  width:60%;
   align-items:center;
   background-color:inherit;
   transform:  ${({ isHamActive }) => (isHamActive ? "0": "translateX(100%)")};
-  transition: transform 0.5s cubic-bezier(.16,1,.3,1);
+  transition: transform 0.8s cubic-bezier(.16,1,.3,1);
+  -webkit-transition: transform 0.8s cubic-bezier(.16,1,.3,1);
+    -moz-transition: transform 0.8s cubic-bezier(.16,1,.3,1);
+    -o-transition:transform 0.8s cubic-bezier(.16,1,.3,1);
+    -ms-transition:transform 0.8s cubic-bezier(.16,1,.3,1);
   transition-delay: 0.15s;
 }
 `
 
 const StyledLink = styled(Link)`
-    font-family: 'Apple';
+    cursor: pointer;
+    font-family: 'Questrial';
+    position: relative;
     text-decoration: none;
     font-size: 1rem;
+    text-transform:uppercase;
+    font-weight: 300;
     padding:1rem;
     word-spacing:-10px;
-    color: ${props => props.color || props.theme.colors.primary};
+    letter-spacing: 0.15rem;
+    color: ${props => props.color || props.theme.colors.black};
 
-    &:focus, 
+      &:before {
+      content: '';
+       position: absolute;
+      transition: transform .5s ease;
+      }
+    
+    &:focus,
     &:visited{
-      color: ${props => props.color || props.theme.colors.primary};
+      color: ${props => props.color || props.theme.colors.black};
     }
 
-    &:hover{
-      animation: ${pulsate} 0.1s ease-in-out infinite alternate;  
+    &:hover:before {
 
     }
+
     @media ${props => props.theme.media.mobile}{
-      font-size:1.625rem;
+      font-size:1.125rem;
       padding-bottom:2rem;
+      
     }
     @media ${props => props.theme.media.tablet}{
-      font-size:1.625rem;
+      font-size:1.125rem;
       padding-bottom:2rem;
     }
 `;
@@ -169,8 +192,7 @@ const Navbar = ({  navLinks,...props}) => {
   return ( 
         <StyledHeader>
       <Logo href="/">
-        <img src={TYPEIT} alt="logo"/>
-        
+        <img src={TYPEIT} alt="Type > it"/>
       </Logo>           
              <FlexDiv onClick={handleOpen}>{
             isHamActive 

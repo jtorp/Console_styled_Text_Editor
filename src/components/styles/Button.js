@@ -2,53 +2,55 @@ import styled,{css} from 'styled-components';
 
 const StyledButton = styled.button`
     cursor: pointer; 
-    width:140px;
+    width:6rem;
     border:none;
-    border-radius: 3px;
-    font-size: 3rem;
-    font-family: 'Apple';
-    margin: 1rem 2em;
-    margin-bottom:5rem;
+    font-size: 2rem;
+    font-family: 'Questrial';
+    margin: 1rem 1.330rem;
     font-size: 1rem;
-    padding: 0.58em 1em;
-    font-weight: 500;
+    padding: 0.58rem 1rem;
+    font-weight: 300;
     text-transform: uppercase;
     align-self:  ${props => props.alignSelf || 'center'};
+
+    img{
+        height:2rem
+    }
   
     &:focus{
         outline: 0;
     }
     
     @media ${props => props.theme.media.mobile}{
-        font-size: 1.625rem;
-        width:100%;
-
+        font-size: 1rem;
+        padding: 0.58rem;
     }
         
     @media ${props => props.theme.media.tablet}{
-            font-size: 1.125rem;
+        font-size: 1rem;
+        padding: 0.58rem;
      }
 
-        ${props => props.green && css`
+        ${props => props.outlined && css`
         background:transparent;
-        border: 1px solid ${props=>props.color || props.theme.colors.primary};
+        border: 1px solid ${props=>props.color || props.theme.colors.black};
         color:  ${props => props.color || props.theme.colors.primary};
         &:hover{
-            color: ${props=>props.theme.colors.primary};
-            transition: all .3s ease-in-out;
-            text-shadow: 0.125rem 0.125rem 0.625rem  ${props=>props.theme.colors.primary};
-            box-shadow: 0 0 1rem 0 ${props=>props.theme.colors.primary} inset, 0 0 1rem 0.125rem ${props=>props.theme.colors.primary};      
+            color: ${props=>props.theme.colors.white};
+            transition: all .5s ease-in-out;
+            background: ${props => props.theme.colors.black};            
         }
         `}
 
-        ${props => props.pink && css`
+        ${props => props.filled && css`
         background:transparent;
         border: 1px solid ${props=>props.color || props.theme.colors.secondary};
         color:  ${props => props.color || props.theme.colors.secondary};
         &:hover{
-            transition: all .3s ease-in-out;
-            box-shadow: 0 0 1rem 0 ${props=>props.theme.colors.secondary} inset, 0 0 1rem 0.125rem ${props=>props.theme.colors.secondary}; 
-            text-shadow: 0.125rem 0.125rem 0.625rem  ${props=>props.theme.colors.secondary};
+            transition: all .3s ease-in-out; 
+            color: ${props=>props.theme.colors.white};
+            transition: all .5s ease-in-out;
+            background: ${props => props.theme.colors.brown};      
         }
         `} 
 `

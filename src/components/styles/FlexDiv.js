@@ -8,8 +8,6 @@ const StyledFlexDiv = styled.div`
     justify-content: ${props => props.justify || 'stretch'};
     margin : ${props => props.margin || '0'};
     z-index: 1;
-
-
   `;
 
 const FlexDiv = (props) => {

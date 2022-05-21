@@ -1,8 +1,11 @@
+import FlexDiv from '../components/styles/FlexDiv';
 import Title  from '../components/styles/Title';
 
 export default function NotFound() {
-    return (
-      <Title> Page Not Found </Title>
+  return (
+      <FlexDiv justify="center">
+            <Title> Page Not Found </Title>
+      </FlexDiv>
 
     );
   }

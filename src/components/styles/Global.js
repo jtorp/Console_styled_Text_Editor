@@ -16,7 +16,7 @@ a{
     line-height: inherit;
 
     &:visited{
-        text-decoration: none;
+    text-decoration: none;
     }
 }
 `

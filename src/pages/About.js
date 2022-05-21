@@ -7,18 +7,23 @@ import Typist from 'react-text-typist';
 const About = () => {
   return (
     
-    <Title>
-       <FlexDiv margin="5rem 3rem" justify="flex-start" >      <Typist
-        sentences={['Sometimes, technology can be awfully distracting.', 'Here you can focus on writing.', 'Write one sentence at a time.','One sentence - one line.', 'Focus.', 'Just type it.']}
+    <FlexDiv margin="5rem 3rem" justify="flex-start" >
+      <Title>
+      <Typist
+          sentences={['Sometimes, technology can be awfully distracting.',
+          'Here you can practice mindfulness.', 'By expressive writing.',
+          'Type your thoughts without regard to punctuation, or grammar',
+          'Let loose and write whatever is on your mind',
+          'Here are no rules', ' – write what you want','-when you want', '- how you want', 'Just type it.']}
         loop={true}
         typingSpeed={55}
         startDelay={5}
         cursorBlinkSpeed={500}
         cursorSmooth={true}
-        cursorColor={"hotpink"}
+        cursorColor={"#8e8384"}
       />
-       </FlexDiv>
       </Title>
+    </FlexDiv>
      
     
   );
