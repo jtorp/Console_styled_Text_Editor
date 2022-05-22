@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import React, { useState } from "react";
 import styled, { keyframes } from 'styled-components';
-import Button from "./Button";
 import FlexDiv from './FlexDiv';
 import TYPEIT from "../styles/assets/TYPEIT.png"
 
