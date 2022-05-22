@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import React, { useState } from "react";
-import styled, {keyframes} from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+import Button from "./Button";
 import FlexDiv from './FlexDiv';
 import TYPEIT from "../styles/assets/TYPEIT.png"
 
@@ -118,7 +119,7 @@ const StyledLink = styled(Link)`
     font-family: 'Questrial';
     position: relative;
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 0.8rem;
     text-transform:uppercase;
     font-weight: 300;
     padding:1rem;
@@ -142,7 +143,7 @@ const StyledLink = styled(Link)`
     }
 
     @media ${props => props.theme.media.mobile}{
-      font-size:1.1rem;
+      font-size:1rem;
       padding-bottom:2rem;
       
       
@@ -168,7 +169,7 @@ const Navbar = ({  navLinks,...props}) => {
         <StyledHeader>
       <Logo href="/">
         <img src={TYPEIT} alt="Type > it"/>
-      </Logo>           
+      </Logo>       
              <FlexDiv onClick={handleOpen}>{
             isHamActive 
             ?
@@ -194,8 +195,8 @@ const Navbar = ({  navLinks,...props}) => {
                     onClick={handleClose}
                     to={link.to}>
                     {link.name} 
-                    </StyledLink>)}
-          </StyledNav>
+           </StyledLink>)}
+      </StyledNav>
       </StyledHeader>
   );
 };

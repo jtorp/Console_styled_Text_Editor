@@ -8,6 +8,7 @@ width: 100%;
 height: 100vh;
 top:0;
 position:fixed;
+overflow: auto;
 color:${props =>props.color || props.theme.colors.black};
 background-color: ${props => props.background || props.theme.backgrounds.secondary};
 background: url(${whitebackground})  no-repeat center center fixed;

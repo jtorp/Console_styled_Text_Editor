@@ -8,19 +8,23 @@ import React, { useState, useRef } from 'react';
 
 const StyledTextarea = styled.textarea`
     width:55%;
-    height:75vh;
+    height:72vh;
     background-color: ${props => props.background ||'transparent'}; 
     color: ${props => props.color || props.theme.colors.black};    
     font-size: 1rem;
     letter-spacing: length;
-    padding-top:0.125rem;
+    padding-top:0.128rem;
     padding-left:0.125rem;
     resize:none;
     border:none;
-    overflow: auto;
+    margin-left:0.3rem;
+    overflow: none;
     font-family: 'Tomorrow';
 
     ::-webkit-input-placeholder {
+        font-size:10px;
+        padding-top:0.5rem;
+        word-spacing:2px;
         opacity: 0.25; /*Change the opacity between 0 and 1*/
    }
     
@@ -91,7 +95,7 @@ const Textarea = ({ color, ...props }) => {
                 <Button 
                     onClick={downloadTxtFile}>
                     <span>save</span>  </Button>
-                <Button dark
+                <Button 
                     onClick={clearFile}
                 > <span> Clear</span>
                 </Button>

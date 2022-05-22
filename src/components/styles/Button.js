@@ -8,7 +8,6 @@ const StyledButton = styled.button`
   cursor: pointer;
   margin: 1rem 1.330rem;
   background:  ${props => props.color || props.theme.colors.white};
-   transition: all 0.2s;
 
   &:focus{
     outline: 0;
@@ -39,33 +38,23 @@ const StyledButton = styled.button`
   &:hover::before, &:hover:after{
     width: 100%;
   }
-
-  ${props => props.dark && css`
-  background:  ${props => props.color || props.theme.colors.gray};
-  color: ${props => props.theme.colors.white};
-  &:hover{
-    color: ${props => props.theme.colors.black};
-  }
-  `
-  }
   @media ${props => props.theme.media.mobile}{
-    display:block;
-      margin:0.4em auto;
-
-}
+    margin: 1rem 1.3rem;
+  }
 
   span{
     display: block;
     font-family: 'Questrial';
-    margin: .825rem;
-    font-size: 1rem;
+    margin: 0.825rem;
+    font-size: 0.7rem;
     padding: 0.325rem 1.1rem;
     font-weight: 300;
     text-transform: uppercase;
 
     @media ${props => props.theme.media.mobile}{
-        font-size: 0.7rem;
-        padding: 0.325rem 1rem;
+        font-size: 1rem;
+        margin:0.4rem;
+        padding: 0.125rem;
     }
 
     @media ${props => props.theme.media.tablet}{
@@ -100,9 +89,8 @@ const StyledButton = styled.button`
    `
 const Button = (props) => {
     return (
-        <StyledButton {...props}>
-        </StyledButton>
-    
+      <StyledButton {...props}>
+      </StyledButton>
      );
   
 }
