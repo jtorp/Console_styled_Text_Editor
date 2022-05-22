@@ -4,32 +4,6 @@ import styled, {keyframes} from 'styled-components';
 import FlexDiv from './FlexDiv';
 import TYPEIT from "../styles/assets/TYPEIT.png"
 
-const pulsate = keyframes`
-100% {
-    text-shadow:
-    0 0 4px #9b9992,
-    0 0 11px #9b9992,
-    0 0 19px #9b9992,
-    0 0 40px #c7c4bb,
-    0 0 80px #c7c4bb,
-    0 0 90px #c7c4bb,
-    0 0 100px #c7c4bb,
-    0 0 150px #c7c4bb;
-} 
-
-0% {
-text-shadow:
-  0 0 4px #9b9992,
-  0 0 10px #9b9992,
-  0 0 18px #9b9992,
-  0 0 38px #c7c4bb,
-  0 0 73px #c7c4bb,
-  0 0 80px #c7c4bb,
-  0 0 94px #c7c4bb,
-  0 0 140px #c7c4bb;
-}
-`
-
 const bounce =keyframes`
 0%,
 20%,
@@ -58,7 +32,7 @@ background-color: ${props => props.background || props.theme.backgrounds.seconda
 `
 
 const Logo = styled.a`
-  padding: 0.625rem;
+  padding: 0.825rem;
   top:3%;
   margin-left:1rem;
   color: ${props => props.color || props.theme.colors.black};
@@ -81,7 +55,7 @@ top:3%;
 right:4%;
 
 svg{
-  stroke: ${props => props.svgs || props.theme.svgs.primary};
+  stroke: ${props => props.color || props.theme.colors.brown};
   stroke-width:2;
 }
 @media ${props => props.theme.media.tablet}{
@@ -150,25 +124,25 @@ const StyledLink = styled(Link)`
     padding:1rem;
     word-spacing:-10px;
     letter-spacing: 0.15rem;
-    color: ${props => props.color || props.theme.colors.black};
+    color: ${props => props.color || props.theme.colors.brown};
 
       &:before {
       content: '';
-       position: absolute;
+      position: absolute;
       transition: transform .5s ease;
       }
-    
+
     &:focus,
     &:visited{
+      border-bottom: 1px  solid ${props => props.color || props.theme.colors.black};
+    }
+
+    &:hover {
       color: ${props => props.color || props.theme.colors.black};
     }
 
-    &:hover:before {
-
-    }
-
     @media ${props => props.theme.media.mobile}{
-      font-size:1.125rem;
+      font-size:1.1rem;
       padding-bottom:2rem;
       
     }

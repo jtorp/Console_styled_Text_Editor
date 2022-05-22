@@ -21,11 +21,6 @@ const theme = {
   backgrounds:{
     primary:"#040404",
     secondary: "#f5f5f5",
-    
-  },
-  svgs:{
-    primary:"#8e8384",
-    secondary: "#C7C4BB",
   },
   media: {
     mobile:"(max-width:428px)",

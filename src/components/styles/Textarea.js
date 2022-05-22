@@ -38,74 +38,66 @@ const StyledTextarea = styled.textarea`
      font-size:1rem;
      width:65%;
      z-index:122
- }
-    
+ }    
   `;
 
 
 const Textarea = ({ color, ...props }) => {
-
-    let currentDateTime=moment().format("ddd, Do of MMM YYYY, h:mm a"); 
+    let currentDateTime = moment().format("ddd,Do of MMM YYYY,h:mma");
     const [lines, setNewLine] = useState([' ¶ ']);
     const ref = useRef();
 
     const onPressEnter = (e) => {
-        if (e.charCode ===  13) {
+        if (e.charCode === 13) {
             setNewLine([...lines, ' ¶ '])
         }
     }
 
     const downloadTxtFile = (typedArray) => {
         typedArray = ref.current.value;
-            const element = document.createElement("a");
-            const file = new Blob([currentDateTime," From TYPE IT.", "\r\n", [typedArray]], {
-              type: "text/plain"
-            });
-            element.href = URL.createObjectURL(file);
-            element.download = "TypeIt.txt";
-            document.body.appendChild(element);
-            element.click();
+        const element = document.createElement("a");
+        const file = new Blob([currentDateTime, " @TYPE IT.", "\r\n", "\r\n", [typedArray]], {
+            type: "text/plain"
+        });
+        element.href = URL.createObjectURL(file);
+        element.download = "TypeIt.txt";
+        document.body.appendChild(element);
+        element.click();
     };
-    
+
     const clearFile = () => {
         setNewLine([' ¶ ']);
         ref.current.value = ""
     }
- 
-    
 
     return (
         <>
-       
-        <FlexDiv>
-            <FlexDiv direction="column" margin="0 5px 0 10px">
-            {lines.map(line=> <Line color = {color}>{line}</Line>)}
-            </FlexDiv>
+            <FlexDiv>
+                <FlexDiv direction="column" margin="0 5px 0 10px">
+                    {lines.map(line => <Line color={color}>{line}</Line>)}
+                </FlexDiv>
 
-            <StyledTextarea 
-            placeholder=" Write whatever is on your mind..."
-            ref={ref}
-            onKeyPress={onPressEnter}
-            color={color}
-            {...props}></StyledTextarea>
-            
+                <StyledTextarea
+                    placeholder=" Write whatever is on your mind..."
+                    ref={ref}
+                    onKeyPress={onPressEnter}
+                    color={color}
+                    {...props}></StyledTextarea>
+
             </FlexDiv>
             <FlexDiv
-                 margin={"0, 0rem, 0.5rem 3rem"}>
-            <Button 
-                    outlined
-                    onClick={downloadTxtFile}> 
-                    SAVE  </Button>
-                <Button 
-                    filled
+                margin={"0, 0rem, 0.5rem 3rem"}>
+                <Button
+                    onClick={downloadTxtFile}>
+                    <span>save</span>  </Button>
+                <Button dark
                     onClick={clearFile}
-                > Clear
-                 </Button>
-                </FlexDiv>
-            </>
-      
+                > <span> Clear</span>
+                </Button>
+            </FlexDiv>
+        </>
     );
-  
+
 }
 
 export default Textarea;

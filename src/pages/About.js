@@ -11,10 +11,10 @@ const About = () => {
       <Title>
       <Typist
           sentences={['Sometimes, technology can be awfully distracting.',
-          'Here you can practice mindfulness.', 'By expressive writing.',
+          'Here you can practice mindfulness,', 'by expressive writing.',
           'Type your thoughts without regard to punctuation, or grammar',
           'Let loose and write whatever is on your mind',
-          'Here are no rules', ' – write what you want','-when you want', '- how you want', 'Just type it.']}
+          'Here are no rules', ' – write what you want','- when you want', '- how you want']}
         loop={true}
         typingSpeed={55}
         startDelay={5}
