@@ -32,7 +32,7 @@ const StyledTextarea = styled.textarea`
       font-size:1.125rem;
       letter-spacing: 0;
       width:98%;
-      max-height: 560px;
+      max-height: 70vh;
   }
     
     @media ${props => props.theme.media.tablet}{
@@ -88,7 +88,7 @@ const Textarea = ({ color, ...props }) => {
             </FlexDiv>
             <FlexDiv
                 margin={"0, 0rem, 0.5rem 3rem"}>
-                <Button
+                <Button 
                     onClick={downloadTxtFile}>
                     <span>save</span>  </Button>
                 <Button dark

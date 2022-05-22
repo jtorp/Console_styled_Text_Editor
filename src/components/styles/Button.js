@@ -8,6 +8,7 @@ const StyledButton = styled.button`
   cursor: pointer;
   margin: 1rem 1.330rem;
   background:  ${props => props.color || props.theme.colors.white};
+   transition: all 0.2s;
 
   &:focus{
     outline: 0;
@@ -47,6 +48,11 @@ const StyledButton = styled.button`
   }
   `
   }
+  @media ${props => props.theme.media.mobile}{
+    display:block;
+      margin:0.4em auto;
+
+}
 
   span{
     display: block;
