@@ -6,9 +6,9 @@ import Console from './pages/Console';
 const AppRouter = () => {
   return (
     <Routes>
-      <Route path="/" element={<About />} />
-      <Route exact path="/console" element={<Console />} />
-      <Route exact path="/about" element={<About />} />
+      <Route exact path="/" element={<About />} />
+      <Route path="/console" element={<Console />} />
+      <Route path="/about" element={<About />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );

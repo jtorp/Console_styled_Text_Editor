@@ -17,8 +17,10 @@ background: url(${whitebackground})  no-repeat center center fixed;
 background-size: cover;
 z-index:10;
 
+
 @media ${props => props.theme.media.mobile}{
   background-image: none;
+  scroll:auto
 }
 `;
 
