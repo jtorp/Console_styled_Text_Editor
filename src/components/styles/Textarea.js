@@ -32,7 +32,7 @@ const StyledTextarea = styled.textarea`
       font-size:1.125rem;
       letter-spacing: 0;
       width:98%;
-      max-height:70vh;
+      max-height: 560px;
   }
     
     @media ${props => props.theme.media.tablet}{
