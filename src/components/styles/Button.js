@@ -16,7 +16,7 @@ const StyledButton = styled.button`
   &:before{
     content:"";
     width: 0;
-    height: 2px;
+    height: 1px;
     position: absolute;
     transition: all 0.2s linear;
     background: ${props => props.color || props.theme.colors.black};
@@ -27,7 +27,7 @@ const StyledButton = styled.button`
   &:after{
     content:"";
     width: 0;
-    height: 2px;
+    height: 1px;
     position: absolute;
     transition: all 0.2s linear;
     background: ${props => props.color || props.theme.colors.black};
@@ -64,7 +64,7 @@ const StyledButton = styled.button`
 
     &:before{
         content:"";
-        width:2px;
+        width:1px;
         height:0;
         position: absolute;
         transition: all 0.2s linear;
@@ -74,7 +74,7 @@ const StyledButton = styled.button`
       }
       &:after{
         content:"";
-        width:2px;
+        width:1px;
         height:0;
         position: absolute;
         transition: all 0.2s linear;
