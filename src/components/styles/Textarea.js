@@ -19,6 +19,10 @@ const StyledTextarea = styled.textarea`
     border:none;
     overflow: hidden;
     font-family: 'Tomorrow';
+
+    ::-webkit-input-placeholder {
+        opacity: 0.25; /*Change the opacity between 0 and 1*/
+   }
     
     &:focus{
         outline: 0;
@@ -53,7 +57,6 @@ const Textarea = ({ color, ...props }) => {
 
     const downloadTxtFile = (typedArray) => {
         typedArray = ref.current.value;
-        console.log(typedArray)
             const element = document.createElement("a");
             const file = new Blob([currentDateTime," From TYPE IT.", "\r\n", [typedArray]], {
               type: "text/plain"
@@ -62,8 +65,12 @@ const Textarea = ({ color, ...props }) => {
             element.download = "TypeIt.txt";
             document.body.appendChild(element);
             element.click();
-          };
-
+    };
+    
+    const clearFile = () => {
+        setNewLine([' ¶ ']);
+        ref.current.value = ""
+    }
  
     
 
@@ -88,16 +95,12 @@ const Textarea = ({ color, ...props }) => {
             <Button 
                     outlined
                     onClick={downloadTxtFile}> 
-
-SAVE                </Button>
+                    SAVE  </Button>
                 <Button 
                     filled
-                    onClick={() => {
-                        setNewLine([' ¶ ']);
-                        ref.current.value = ""
-                    }
-                    }> Clear
-                      </Button>
+                    onClick={clearFile}
+                > Clear
+                 </Button>
                 </FlexDiv>
             </>
       
