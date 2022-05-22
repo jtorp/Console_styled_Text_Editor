@@ -17,6 +17,7 @@ const StyledTextarea = styled.textarea`
     padding-left:0.125rem;
     resize:none;
     border:none;
+    margin-top: 0.5rem;
     margin-left:0.3rem;
     overflow: none;
     font-family: 'Tomorrow';
@@ -25,7 +26,7 @@ const StyledTextarea = styled.textarea`
         font-size:10px;
         padding-top:0.5rem;
         word-spacing:2px;
-        opacity: 0.25; /*Change the opacity between 0 and 1*/
+        opacity: 0.25; 
    }
     
     &:focus{
@@ -36,7 +37,7 @@ const StyledTextarea = styled.textarea`
       font-size:1.125rem;
       letter-spacing: 0;
       width:98%;
-      max-height: 70vh;
+      max-height: 80vh;
   }
     
     @media ${props => props.theme.media.tablet}{
