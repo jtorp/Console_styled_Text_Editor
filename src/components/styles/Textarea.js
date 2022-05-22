@@ -17,7 +17,7 @@ const StyledTextarea = styled.textarea`
     padding-left:0.125rem;
     resize:none;
     border:none;
-    overflow: hidden;
+    overflow: auto;
     font-family: 'Tomorrow';
 
     ::-webkit-input-placeholder {
