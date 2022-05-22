@@ -38,7 +38,7 @@ function App() {
      <ThemeProvider theme={theme}>
        <Global/>
        <Container>
-         <FlexDiv margin={"2rem 0"}>
+           <FlexDiv margin={"2rem 0 3rem 0"}>
          <Navbar justify={"flex-end"} navLinks={navLinks}/>
          </FlexDiv>
          <AppRouter/>

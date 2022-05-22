@@ -4,7 +4,6 @@ const StyledLine = styled.div`
     font-size: 1rem;
     letter-spacing: 0px;
     margin-left:1rem;
-    margin-top: 0.5rem;
     padding-top:0.125rem;
     overflow: auto;
     opacity:0.5;

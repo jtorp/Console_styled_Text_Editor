@@ -17,7 +17,6 @@ const StyledTextarea = styled.textarea`
     padding-left:0.125rem;
     resize:none;
     border:none;
-    margin-top: 0.5rem;
     margin-left:0.3rem;
     overflow: none;
     font-family: 'Tomorrow';
