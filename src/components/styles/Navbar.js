@@ -134,7 +134,7 @@ const StyledLink = styled(Link)`
 
     &:focus,
     &:visited{
-      border-bottom: 1px  solid ${props => props.color || props.theme.colors.black};
+     text-decoration:none;
     }
 
     &:hover {
@@ -144,6 +144,7 @@ const StyledLink = styled(Link)`
     @media ${props => props.theme.media.mobile}{
       font-size:1.1rem;
       padding-bottom:2rem;
+      
       
     }
     @media ${props => props.theme.media.tablet}{
