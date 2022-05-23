@@ -23,7 +23,7 @@ const theme = {
     secondary: "#f5f5f5",
   },
   media: {
-    xsmobile: "(max-width:428px) and (min-width:360px)",
+    xsmobile: "(max-width:390px)",
     mobile:"(max-width:428px)",
     tablet:"(max-width: 834px) and (min-width:428px) ",
   },

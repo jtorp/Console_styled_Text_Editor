@@ -7,6 +7,7 @@ const StyledButton = styled.button`
   border: none;
   color: ${props => props.color || props.theme.colors.black};
   cursor: pointer;
+  width:89px;
   margin: 1rem 1.330rem;
   background:  ${props => props.color || props.theme.colors.white};
 
@@ -41,15 +42,14 @@ const StyledButton = styled.button`
   }
   @media ${props => props.theme.media.xsmobile}{
     top:76%;
-    width:110px !important;
-    left:109px;
+    width:100px !important;
+    left:230px !important;
   }
   @media ${props => props.theme.media.mobile}{
     top:76%;
     width:119px;
-    left:255px;
+    left:265px;
   }
-
 
   ${props => props.dark && css`
   position: absolute;
@@ -61,7 +61,7 @@ const StyledButton = styled.button`
 
   @media ${props => props.theme.media.mobile}{
    top:86%;
-   left:255px;
+   left:265px;
   }
 
   &:hover{
@@ -71,13 +71,11 @@ const StyledButton = styled.button`
   }
   `
 }
-
   span{
     display: block;
     font-family: 'Questrial';
     margin: 0.825rem;
     font-size: 0.7rem;
-    padding: 0.205rem 1.1rem;
     font-weight: 300;
     text-transform: uppercase;
 

@@ -22,12 +22,6 @@ const StyledTextarea = styled.textarea`
     overflow: none;
     font-family: 'Tomorrow';
 
-    ::-webkit-input-placeholder {
-        font-size:0.5rem;
-        padding-top:0.5rem;
-        word-spacing:2px;
-        opacity: 0.25; 
-   }
 
     ::-webkit-scrollbar {
     display: none;
@@ -56,14 +50,8 @@ const StyledTextarea = styled.textarea`
 
 const Textarea = ({ color, ...props }) => {
     let currentDateTime = moment().format("ddd,Do of MMM YYYY,h:mma");
-    const [lines, setNewLine] = useState([' § ']);
+    const [lines, setNewLine] = useState([' ~ ']);
     const ref = useRef();
-
-    const onPressEnter = (e) => {
-        if (e.charCode === 13) {
-            setNewLine([...lines, ' § '])
-        }
-    }
 
     const downloadTxtFile = (typedArray) => {
         typedArray = ref.current.value;
@@ -78,7 +66,7 @@ const Textarea = ({ color, ...props }) => {
     };
 
     const clearFile = () => {
-        setNewLine([' § ']);
+        setNewLine([' ~ ']);
         ref.current.value = ""
     }
 
@@ -90,9 +78,8 @@ const Textarea = ({ color, ...props }) => {
                 </FlexDiv>
 
                 <StyledTextarea
-                    placeholder=" Write whatever is on your mind..."
+                    placeholder=" just type it..."
                     ref={ref}
-                    onKeyPress={onPressEnter}
                     color={color}
                     {...props}></StyledTextarea>
 
