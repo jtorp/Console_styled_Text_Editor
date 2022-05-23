@@ -1,8 +1,8 @@
-import react, { useRef, useState } from 'react';
+import { useRef } from 'react';
 import useFullscreenStatus from '../hooks/useFullScreen';
 import enterFs from '../components/styles/assets/enterFs.png';
 import exitFs from '../components/styles/assets/exitFs.png'
-import styled, { css, keyframes } from 'styled-components';
+import styled from 'styled-components';
 
 
 
@@ -78,9 +78,15 @@ function MaxView({ children, backgroundColor }) {
                         </span>
                     ) :
                         isFullscreen ? (<button onClick={handleExitFullScreen}>
-                            <img src={exitFs} /></button>) : (
-                            <button onClick={setFullScreen}> <img src={enterFs} /></button>
-                        )
+                            <img alt="exit fullscreen"
+                                src={exitFs} />
+                        </button>)
+                            : (
+                                <button onClick={setFullScreen}>
+                                    <img alt="enter fullscreen"
+                                        src={enterFs} />
+                                </button>
+                            )
                 }
             </MaxActions>
         </div>
