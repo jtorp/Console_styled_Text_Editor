@@ -1,0 +1,6 @@
+.maxview-container.fullscreen {
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 1rem;
+}

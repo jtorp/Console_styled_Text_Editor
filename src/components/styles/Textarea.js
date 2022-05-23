@@ -8,8 +8,9 @@ import React, { useState, useRef } from 'react';
 
 const StyledTextarea = styled.textarea`
     width:55%;
-    height:72vh;
-    background-color: ${props => props.background ||'transparent'}; 
+    height:80vh;
+    max-height:80vh;
+    background-color: ${props => props.background || 'transparent'};
     color: ${props => props.color || props.theme.colors.black};    
     font-size: 1rem;
     letter-spacing: length;
@@ -22,11 +23,15 @@ const StyledTextarea = styled.textarea`
     font-family: 'Tomorrow';
 
     ::-webkit-input-placeholder {
-        font-size:10px;
+        font-size:0.5rem;
         padding-top:0.5rem;
         word-spacing:2px;
         opacity: 0.25; 
    }
+
+    ::-webkit-scrollbar {
+    display: none;
+  }
     
     &:focus{
         outline: 0;
@@ -35,26 +40,28 @@ const StyledTextarea = styled.textarea`
   @media ${props => props.theme.media.mobile}{
       font-size:1.125rem;
       letter-spacing: 0;
-      width:98%;
+      width:80%;
       max-height: 80vh;
   }
     
     @media ${props => props.theme.media.tablet}{
      font-size:1rem;
      width:65%;
-     z-index:122
+     z-index:122;
+     max-height: 80vh;
+
  }    
   `;
 
 
 const Textarea = ({ color, ...props }) => {
     let currentDateTime = moment().format("ddd,Do of MMM YYYY,h:mma");
-    const [lines, setNewLine] = useState([' ¶ ']);
+    const [lines, setNewLine] = useState([' § ']);
     const ref = useRef();
 
     const onPressEnter = (e) => {
         if (e.charCode === 13) {
-            setNewLine([...lines, ' ¶ '])
+            setNewLine([...lines, ' § '])
         }
     }
 
@@ -71,7 +78,7 @@ const Textarea = ({ color, ...props }) => {
     };
 
     const clearFile = () => {
-        setNewLine([' ¶ ']);
+        setNewLine([' § ']);
         ref.current.value = ""
     }
 
@@ -92,10 +99,11 @@ const Textarea = ({ color, ...props }) => {
             </FlexDiv>
             <FlexDiv
                 margin={"0, 0rem, 0.5rem 3rem"}>
-                <Button 
+                <Button
+                    dark
                     onClick={downloadTxtFile}>
                     <span>save</span>  </Button>
-                <Button 
+                <Button
                     onClick={clearFile}
                 > <span> Clear</span>
                 </Button>

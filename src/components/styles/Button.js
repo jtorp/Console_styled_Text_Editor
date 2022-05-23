@@ -1,8 +1,9 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const StyledButton = styled.button`
-  display: inline-block;
-  position: relative;
+  position: absolute;
+  top:84%;
+  left:630px;
   border: none;
   color: ${props => props.color || props.theme.colors.black};
   cursor: pointer;
@@ -38,28 +39,56 @@ const StyledButton = styled.button`
   &:hover::before, &:hover:after{
     width: 100%;
   }
-  @media ${props => props.theme.media.mobile}{
-    margin: 1rem 1.3rem;
+  @media ${props => props.theme.media.xsmobile}{
+    top:76%;
+    width:110px !important;
+    left:109px;
   }
+  @media ${props => props.theme.media.mobile}{
+    top:76%;
+    width:119px;
+    left:255px;
+  }
+
+
+  ${props => props.dark && css`
+  position: absolute;
+  top:84%;
+  left:520px;
+  border:none;
+  background:  ${props => props.color || props.theme.colors.gray};
+  color:  ${props => props.color || props.theme.colors.secondary};
+
+  @media ${props => props.theme.media.mobile}{
+   top:86%;
+   left:255px;
+  }
+
+  &:hover{
+      transition: all .3s ease-in-out;
+      color: ${props => props.theme.colors.white};
+      transition: all .5s ease-in-out;
+  }
+  `
+}
 
   span{
     display: block;
     font-family: 'Questrial';
     margin: 0.825rem;
     font-size: 0.7rem;
-    padding: 0.325rem 1.1rem;
+    padding: 0.205rem 1.1rem;
     font-weight: 300;
     text-transform: uppercase;
 
     @media ${props => props.theme.media.mobile}{
-        font-size: 1rem;
-        margin:0.4rem;
-        padding: 0.125rem;
-    }
+        font-size: 1rem;          
+      }
 
     @media ${props => props.theme.media.tablet}{
         font-size:0.8rem;
         padding: 0.325rem 1rem;
+
     }
 
     &:before{

@@ -6,7 +6,8 @@ import Console from './pages/Console';
 const AppRouter = () => {
   return (
     <Routes>
-      <Route exact path="/" element={<About />} />
+      <Route path="/" element={<About />} />
+      <Route index element={<About />} />
       <Route path="/console" element={<Console />} />
       <Route path="/about" element={<About />} />
       <Route path="*" element={<NotFound />} />
