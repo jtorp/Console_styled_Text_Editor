@@ -50,13 +50,13 @@ const StyledTextarea = styled.textarea`
 
 const Textarea = ({ color, ...props }) => {
     let currentDateTime = moment().format("ddd,Do of MMM YYYY,h:mma");
-    const [lines, setNewLine] = useState(['-']);
+    const [lines, setNewLine] = useState(['~']);
     const ref = useRef();
 
     const downloadTxtFile = (typedArray) => {
         typedArray = ref.current.value;
         const element = document.createElement("a");
-        const file = new Blob([currentDateTime, " @TYPE IT.", "\r\n", "\r\n", [typedArray]], {
+        const file = new Blob([currentDateTime, "from TYPE~IT.", "\r\n", "\r\n", [typedArray]], {
             type: "text/plain"
         });
         element.href = URL.createObjectURL(file);
@@ -66,7 +66,7 @@ const Textarea = ({ color, ...props }) => {
     };
 
     const clearFile = () => {
-        setNewLine(['-']);
+        setNewLine(['~']);
         ref.current.value = ""
     }
 

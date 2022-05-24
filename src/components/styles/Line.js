@@ -5,7 +5,6 @@ const StyledLine = styled.div`
     letter-spacing: 0px;
     margin-left:1rem;
     padding-top:0.125rem;
-    overflow: auto;
     opacity:0.5;
     line-height:1.1rem;
     color: ${props => props.color || props.theme.colors.brown};
