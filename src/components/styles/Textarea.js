@@ -50,7 +50,7 @@ const StyledTextarea = styled.textarea`
 
 const Textarea = ({ color, ...props }) => {
     let currentDateTime = moment().format("ddd,Do of MMM YYYY,h:mma");
-    const [lines, setNewLine] = useState([' ~ ']);
+    const [lines, setNewLine] = useState(['-']);
     const ref = useRef();
 
     const downloadTxtFile = (typedArray) => {
@@ -66,7 +66,7 @@ const Textarea = ({ color, ...props }) => {
     };
 
     const clearFile = () => {
-        setNewLine([' ~ ']);
+        setNewLine(['-']);
         ref.current.value = ""
     }
 
@@ -74,7 +74,7 @@ const Textarea = ({ color, ...props }) => {
         <>
             <FlexDiv>
                 <FlexDiv direction="column" margin="0 5px 0 10px">
-                    {lines.map(line => <Line color={color}>{line}</Line>)}
+                    {lines.map(line => <Line color="black">{line}</Line>)}
                 </FlexDiv>
 
                 <StyledTextarea
