@@ -7,7 +7,7 @@ const StyledLine = styled.div`
     padding-top:0.125rem;
     opacity:0.5;
     line-height:1.1rem;
-    color: ${props => props.color || props.theme.colors.brown};
+    color: ${props => props.color || props.theme.colors.gray};
 
     @media ${props => props.theme.media.mobile}{
       font-size:1.125rem;

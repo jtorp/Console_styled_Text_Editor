@@ -55,7 +55,7 @@ top:3%;
 right:4%;
 
 svg{
-  stroke: ${props => props.color || props.theme.colors.brown};
+  stroke: ${props => props.color || props.theme.colors.black};
   stroke-width:2;
 }
 @media ${props => props.theme.media.tablet}{
@@ -124,7 +124,7 @@ const StyledLink = styled(Link)`
     padding:1rem;
     word-spacing:-10px;
     letter-spacing: 0.15rem;
-    color: ${props => props.color || props.theme.colors.brown};
+    color: ${props => props.color || props.theme.colors.black};
 
       &:before {
       content: '';
