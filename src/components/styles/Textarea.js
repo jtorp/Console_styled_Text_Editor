@@ -56,7 +56,7 @@ const Textarea = ({ color, ...props }) => {
     const downloadTxtFile = (typedArray) => {
         typedArray = ref.current.value;
         const element = document.createElement("a");
-        const file = new Blob([currentDateTime, "from TYPE~IT.", "\r\n", "\r\n", [typedArray]], {
+        const file = new Blob([currentDateTime, " from TYPE~IT.", "\r\n", "\r\n", [typedArray]], {
             type: "text/plain"
         });
         element.href = URL.createObjectURL(file);
