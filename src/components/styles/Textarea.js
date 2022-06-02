@@ -87,6 +87,7 @@ const Textarea = ({ color, ...props }) => {
             <FlexDiv
                 margin={"0, 0rem, 0.5rem 3rem"}>
                 <Button
+                    dark
                     onClick={downloadTxtFile}>
                     <span>save</span>  </Button>
                 <Button
